@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+
+ </head>
+
+ <style>
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: #96D4D4;
+}
+</style>
+<body>
+<span id="data"></span>
+<table  style="border: 1px solid black;font-family:  Arial, sans-serif; font-size: 14px; line-height: 1.5;width:100%;">
+<tr>
+    <th>Product Name</th>
+    <th>Product Price</th>
+    <th>Product Quantity</th>
+ <th>Individual Price</th>
+  </tr>
+
+ <tr>
+  <td>
+  {% for i in context%}
+  <li>{{ i }}</li><br>
+{% endfor %}
+</td><br>
+    <td>
+ {% for i in context1%}
+  <li>{{ i }}</li><br>
+{% endfor %}
+</td><br>
+      <td>
+ {% for i in context3%}
+  <li>{{ i }}</li><br>
+{% endfor %}
+</td><br>
+        <td>
+ {% for i in context2%}
+  <li>{{ i }}</li><br>
+{% endfor %}
+</td><br>
+ </tr>
+    <tr>
+        <th>Total Price</th>
+        <td></td>
+        <td></td>
+        <td><li><b>{{context4}}</b></li></td>
+    </tr>
+</table>
+</body>
+</html>
+<script>
+ document.getElementById("data").value=5
+
+</script>
