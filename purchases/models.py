@@ -15,6 +15,7 @@ class User(models.Model):
 class Product(models.Model):
     product_name = models.CharField(max_length=30)
     product_desc = models.CharField(max_length=300, null=True, blank=True)
+    image=models.CharField(blank=False,default=1,max_length=3000)
 
     def __str__(self):
         return self.product_name
@@ -37,11 +38,12 @@ class Product_holders_List(models.Model):
     stock = models.IntegerField(null=False, default=0)
 
 
-class Order(models.Model):
+class Purchase_list(models.Model):
     product = models.ManyToManyField(Product)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='set_user')
     quantity = models.IntegerField(null=False, default=1)
     total_price = models.IntegerField()
 
     def __int__(self):
-        return self.Order.pk
+        return self.pk
+
